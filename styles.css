@@ -1,0 +1,148 @@
+:root {
+  --bg: #0d0f12;
+  --panel: #151922;
+  --text: #f1f6ff;
+  --muted: #adbdcc;
+  --accent: #42f58a;
+  --line: rgba(255, 255, 255, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 80% -10%, rgba(66, 245, 138, 0.14), transparent 35%),
+    linear-gradient(145deg, #0d0f12, #131824);
+}
+
+.wrap {
+  width: min(1080px, 92vw);
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 0;
+}
+
+.logo {
+  font-family: "Anton", sans-serif;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.4rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.btn {
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #091008;
+  font-weight: 700;
+}
+
+.hero {
+  padding: 3rem 0;
+}
+
+.tag {
+  color: var(--accent);
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+}
+
+h1 {
+  font-family: "Anton", sans-serif;
+  font-size: clamp(2.1rem, 7vw, 5rem);
+  letter-spacing: 0.02em;
+  margin: 0.3rem 0 1rem;
+  max-width: 10ch;
+}
+
+.hero p {
+  max-width: 56ch;
+  color: var(--muted);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.cards article,
+.results,
+.price,
+.trial {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.1rem;
+}
+
+.cards p,
+.results p,
+.price p {
+  color: var(--muted);
+}
+
+.results,
+.price,
+.trial {
+  margin-top: 1rem;
+}
+
+.results div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.results strong {
+  display: block;
+  font-size: 1.6rem;
+  color: var(--accent);
+}
+
+.trial a {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+footer {
+  padding: 2rem 0;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  nav {
+    flex-wrap: wrap;
+  }
+
+  .cards,
+  .results div {
+    grid-template-columns: 1fr;
+  }
+}
